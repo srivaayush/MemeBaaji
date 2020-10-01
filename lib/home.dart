@@ -139,42 +139,44 @@ class _HomePageState extends State<HomePage> {
                 height: 20,
               ),
               imageSelected
-                  ? Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Column(
-                        children: <Widget>[
-                          TextField(
-                            onChanged: (val) {
-                              setState(() {
-                                headerText = val;
-                              });
-                            },
-                            decoration:
-                                InputDecoration(hintText: "Header Text"),
-                          ),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          TextField(
-                            onChanged: (val) {
-                              setState(() {
-                                footerText = val;
-                              });
-                            },
-                            decoration:
-                                InputDecoration(hintText: "Footer Text"),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          RaisedButton(
-                            onPressed: () {
-                              //TODO
-                              takeScreenshot();
-                            },
-                            child: Text("Save"),
-                          )
-                        ],
+                  ? Center(
+                      child: Container(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          children: <Widget>[
+                            TextField(
+                              onChanged: (val) {
+                                setState(() {
+                                  headerText = val;
+                                });
+                              },
+                              decoration:
+                                  InputDecoration(hintText: "Header Text"),
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            TextField(
+                              onChanged: (val) {
+                                setState(() {
+                                  footerText = val;
+                                });
+                              },
+                              decoration:
+                                  InputDecoration(hintText: "Footer Text"),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            RaisedButton(
+                              onPressed: () {
+                                //TODO
+                                takeScreenshot();
+                              },
+                              child: Text("Save"),
+                            )
+                          ],
+                        ),
                       ),
                     )
                   : Container(
@@ -186,7 +188,10 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-              _imageFile != null ? Image.file(_imageFile) : Container(),
+              Center(
+                  child: _imageFile != null
+                      ? Image.file(_imageFile)
+                      : Container()),
             ],
           ),
         ),
