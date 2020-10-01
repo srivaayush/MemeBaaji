@@ -188,10 +188,12 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-              Center(
-                  child: _imageFile != null
-                      ? Image.file(_imageFile)
-                      : Container()),
+              Column(
+                children: [
+                  _imageFile != null ? Image.file(_imageFile) : Container()
+                ],
+                mainAxisAlignment: MainAxisAlignment.center,
+              ),
             ],
           ),
         ),
